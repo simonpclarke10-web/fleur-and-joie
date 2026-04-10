@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const planningTiers = [
     {
       title: "Intimate Celebrations",
@@ -100,6 +103,8 @@ function App() {
     },
   ];
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <div className="site">
       <header className="hero">
@@ -112,12 +117,24 @@ function App() {
               </div>
             </div>
 
-            <div className="navlinks">
-              <a href="#about">About</a>
-              <a href="#services">Services</a>
-              <a href="#pricing">Pricing</a>
-              <a href="#gallery">Gallery</a>
-              <a href="#contact">Contact</a>
+            <button
+              className={`menu-toggle ${menuOpen ? "open" : ""}`}
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle menu"
+              aria-expanded={menuOpen}
+              type="button"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+
+            <div className={`navlinks ${menuOpen ? "nav-open" : ""}`}>
+              <a href="#about" onClick={closeMenu}>About</a>
+              <a href="#services" onClick={closeMenu}>Services</a>
+              <a href="#pricing" onClick={closeMenu}>Pricing</a>
+              <a href="#gallery" onClick={closeMenu}>Gallery</a>
+              <a href="#contact" onClick={closeMenu}>Contact</a>
             </div>
           </nav>
 
@@ -280,8 +297,8 @@ function App() {
           <p className="eyebrow">Gallery</p>
           <h2>A glimpse into the Fleur &amp; Joie aesthetic.</h2>
           <p className="section-intro">
-            These are temporary editorial-style concept images to help the brand
-            feel polished while you prepare for launch.
+            These are temporary editorial-style concept visuals to help the
+            brand feel polished while you prepare for launch.
           </p>
 
           <div className="gallery-grid">
@@ -339,7 +356,7 @@ function App() {
 
           <form
             className="enquiry-form"
-            action="https://formspree.io/f/mzdklvla"
+            action="https://formspree.io/f/your-form-id"
             method="POST"
           >
             <div className="form-grid">
