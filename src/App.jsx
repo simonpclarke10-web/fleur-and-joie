@@ -40,9 +40,27 @@ function App() {
     },
     {
       title: "Wooden Garden Games",
-      half: "-",
+      half: "—",
       full: "£200",
       note: "Classic outdoor entertainment with a premium finish.",
+    },
+  ];
+
+  const packages = [
+    {
+      name: "Little Luxe",
+      description:
+        "A refined children's setup featuring soft play and wobble cars, perfect for indoor celebrations.",
+    },
+    {
+      name: "Garden Party Edit",
+      description:
+        "A curated outdoor experience with our aesthetic castle and handcrafted wooden games.",
+    },
+    {
+      name: "Celebration Planning",
+      description:
+        "From stylish birthdays to larger private occasions, we plan events with care, calm, and beautiful detail.",
     },
   ];
 
@@ -52,9 +70,12 @@ function App() {
         <div className="container">
           <nav className="topbar">
             <div>
-              <div className="brand">Fleur & Joie</div>
-              <div className="tagline">Curated celebrations, beautifully styled</div>
+              <div className="brand">Fleur &amp; Joie</div>
+              <div className="tagline">
+                Curated celebrations, beautifully styled
+              </div>
             </div>
+
             <div className="navlinks">
               <a href="#about">About</a>
               <a href="#services">Services</a>
@@ -65,16 +86,17 @@ function App() {
 
           <div className="hero-content">
             <div>
-              <p className="eyebrow">Premium Event Planning & Hire</p>
+              <p className="eyebrow">Premium Event Planning &amp; Hire</p>
               <h1>
                 Elegant events for children, adults, and every meaningful moment
                 in between.
               </h1>
               <p className="intro">
-                Fleur & Joie creates refined celebrations through thoughtful
+                Fleur &amp; Joie creates refined celebrations through thoughtful
                 event planning and beautifully curated hire pieces, from intimate
                 children's parties to elevated milestone occasions.
               </p>
+
               <div className="buttons">
                 <a className="btn btn-dark" href="#contact">
                   Enquire Now
@@ -87,6 +109,9 @@ function App() {
 
             <div className="hero-card">
               <div className="placeholder">Hero image placeholder</div>
+              <p className="placeholder-caption">
+                Replace this with your best event photo
+              </p>
             </div>
           </div>
         </div>
@@ -96,15 +121,18 @@ function App() {
         <div className="container two-col">
           <div>
             <p className="eyebrow">About</p>
-            <h2>A brand inspired by beauty, joy, and meaningful celebration.</h2>
+            <h2>
+              A brand inspired by beauty, joy, and meaningful celebration.
+            </h2>
           </div>
+
           <div>
             <p>
-              Fleur & Joie is a premium event planning and hire business created
-              to bring elegance and ease to special occasions. Inspired by your
-              daughters, the brand carries a personal story while remaining
-              timeless, versatile, and suited to both children's celebrations and
-              sophisticated milestone events.
+              Fleur &amp; Joie is a premium event planning and hire business
+              created to bring elegance and ease to special occasions. Inspired
+              by your daughters, the brand carries a personal story while
+              remaining timeless, versatile, and suited to both children's
+              celebrations and sophisticated milestone events.
             </p>
           </div>
         </div>
@@ -116,27 +144,12 @@ function App() {
           <h2>Planning, styling, and hire for beautifully curated occasions.</h2>
 
           <div className="grid three">
-            <div className="card">
-              <h3>Little Luxe</h3>
-              <p>
-                A refined children's setup featuring soft play and wobble cars,
-                perfect for indoor celebrations.
-              </p>
-            </div>
-            <div className="card">
-              <h3>Garden Party Edit</h3>
-              <p>
-                A curated outdoor experience with our aesthetic castle and
-                handcrafted wooden games.
-              </p>
-            </div>
-            <div className="card">
-              <h3>Celebration Planning</h3>
-              <p>
-                From stylish birthdays to larger private occasions, we plan
-                events with care, calm, and beautiful detail.
-              </p>
-            </div>
+            {packages.map((pkg) => (
+              <div className="card" key={pkg.name}>
+                <h3>{pkg.name}</h3>
+                <p>{pkg.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -146,6 +159,7 @@ function App() {
           <div>
             <p className="eyebrow">Event Planning</p>
             <h2>Planning packages</h2>
+
             <div className="stack">
               {planningTiers.map((tier) => (
                 <div className="card" key={tier.title}>
@@ -163,11 +177,13 @@ function App() {
           <div>
             <p className="eyebrow">Hire Collection</p>
             <h2>Hire pricing</h2>
+
             <div className="stack">
               {hireItems.map((item) => (
                 <div className="card" key={item.title}>
                   <h3>{item.title}</h3>
                   <p>{item.note}</p>
+
                   <div className="grid two prices">
                     <div className="price-box">
                       <span>Half Day</span>
@@ -187,10 +203,13 @@ function App() {
 
       <section className="section alt">
         <div className="container">
+          <p className="eyebrow">Gallery</p>
+          <h2>A glimpse into the Fleur &amp; Joie aesthetic.</h2>
+
           <div className="grid three">
-            <div className="gallery">Gallery image</div>
-            <div className="gallery">Gallery image</div>
-            <div className="gallery">Gallery image</div>
+            <div className="gallery">Photo placeholder</div>
+            <div className="gallery">Photo placeholder</div>
+            <div className="gallery">Photo placeholder</div>
           </div>
         </div>
       </section>
@@ -203,11 +222,17 @@ function App() {
             Whether you're planning a children's party, a milestone birthday, or
             a bespoke private event, we'd love to hear more.
           </p>
+
           <div className="buttons center-buttons">
             <a className="btn btn-dark" href="mailto:simonpclarke10@gmail.com">
               simonpclarke10@gmail.com
             </a>
-            <a className="btn btn-light" href="https://instagram.com" target="_blank" rel="noreferrer">
+            <a
+              className="btn btn-light"
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               Instagram
             </a>
           </div>

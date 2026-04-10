@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -37,8 +41,9 @@ a {
 }
 
 .brand {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .tagline {
@@ -51,6 +56,11 @@ a {
   display: flex;
   gap: 22px;
   flex-wrap: wrap;
+  font-size: 15px;
+}
+
+.navlinks a:hover {
+  opacity: 0.7;
 }
 
 .hero-content {
@@ -66,6 +76,7 @@ a {
   letter-spacing: 2px;
   font-size: 12px;
   color: #8a7f75;
+  margin-bottom: 10px;
 }
 
 h1 {
@@ -88,11 +99,15 @@ h3 {
   font-weight: 400;
 }
 
-.intro,
 p {
   font-size: 18px;
   line-height: 1.7;
   color: #5f5650;
+  margin: 0;
+}
+
+.intro {
+  max-width: 700px;
 }
 
 .buttons {
@@ -106,6 +121,12 @@ p {
   padding: 14px 22px;
   border-radius: 999px;
   display: inline-block;
+  transition: 0.2s ease;
+  font-size: 15px;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
 }
 
 .btn-dark {
@@ -116,6 +137,7 @@ p {
 .btn-light {
   border: 1px solid #c8beb5;
   background: white;
+  color: #2f2a26;
 }
 
 .hero-card,
@@ -136,6 +158,14 @@ p {
   align-items: center;
   justify-content: center;
   color: #6d645d;
+  text-align: center;
+  padding: 20px;
+}
+
+.placeholder-caption {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #8a7f75;
 }
 
 .section {
@@ -183,6 +213,7 @@ p {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #8a7f75;
+  margin-bottom: 12px;
 }
 
 .prices {
@@ -206,6 +237,7 @@ p {
 .price-box strong {
   font-size: 24px;
   font-weight: 500;
+  color: #2f2a26;
 }
 
 .contact-box {
