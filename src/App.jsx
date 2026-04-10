@@ -4,29 +4,20 @@ import "./App.css";
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const planningTiers = [
-    {
-      title: "Intimate Celebrations",
-      price: "£250",
-      detail: "For events under £3,000",
-      description:
-        "A thoughtful planning service for smaller occasions, with elegant support from concept to coordination.",
-    },
-    {
-      title: "Signature Events",
-      price: "£500",
-      detail: "For events up to £7,000",
-      description:
-        "Ideal for milestone birthdays and beautifully styled gatherings that need a more involved planning hand.",
-    },
-    {
-      title: "Bespoke Planning",
-      price: "From £1,000",
-      detail: "For events over £7,000",
-      description:
-        "A premium service for larger celebrations, elevated guest experiences, and high-touch event coordination.",
-    },
-  ];
+const packages = [
+  {
+    name: "Little Luxe",
+    price: "£200 Half Day · £300 Full Day",
+    description:
+      "A beautifully styled children's package including a bouncy castle, soft play, and ride-on toys.",
+  },
+  {
+    name: "Garden Vibes",
+    price: "£550 Full Day",
+    description:
+      "A premium outdoor package including a bouncy castle, garden games, and speakers for the perfect garden celebration.",
+  },
+];
 
   const hireItems = [
     {
@@ -36,10 +27,10 @@ function App() {
       note: "A statement hire piece for beautifully styled celebrations.",
     },
     {
-      title: "Soft Play Experience",
+      title: "Soft Play & Toys Experience",
       half: "£65",
       full: "£100",
-      note: "An indoor play package designed for little guests.",
+      note: "An indoor play package designed for little guests, with soft play and toys for stylish children's celebrations.",
     },
     {
       title: "Luxury Garden Games",
@@ -47,23 +38,26 @@ function App() {
       full: "£200",
       note: "Classic outdoor entertainment with a premium finish.",
     },
+    {
+      title: "Speakers",
+      half: "—",
+      full: "£150",
+      note: "A simple speaker hire option to elevate garden parties and private celebrations.",
+    },
   ];
 
   const packages = [
     {
       name: "Little Luxe",
+      price: "£200 Half Day · £300 Full Day",
       description:
-        "A refined children's setup featuring soft play and wobble cars, perfect for indoor celebrations.",
+        "A beautifully styled children's package including a bouncy castle, soft play, and ride-on toys.",
     },
     {
-      name: "Garden Party Edit",
+      name: "Garden Vibes",
+      price: "£550 Full Day",
       description:
-        "A curated outdoor experience with our aesthetic castle and handcrafted wooden games.",
-    },
-    {
-      name: "Celebration Planning",
-      description:
-        "From stylish birthdays to larger private occasions, we plan events with care, calm, and beautiful detail.",
+        "A premium outdoor package including a bouncy castle, garden games, and speakers for the perfect garden celebration.",
     },
   ];
 
@@ -81,7 +75,7 @@ function App() {
     {
       title: "For Every Occasion",
       description:
-        "From children's parties to milestone birthdays and private celebrations, our brand is designed to grow with every event.",
+        "From children's parties to milestone birthdays and private celebrations, Fleur & Joie is designed to grow with every event.",
     },
   ];
 
@@ -94,12 +88,12 @@ function App() {
     {
       question: "Do you cover all of Cheshire?",
       answer:
-        "Yes, we are based in Winsford and cover Cheshire. Travel outside our usual area may also be available on request.",
+        "Yes, we are based in Winsford and cover Cheshire and surrounding areas. Travel outside this area may also be available on request.",
     },
     {
-      question: "Can you help with both adult and children's events?",
+      question: "Do you offer both children's and adult events?",
       answer:
-        "Absolutely. Fleur & Joie is designed to offer stylish experiences for children's celebrations, milestone birthdays, and private events.",
+        "Yes — Fleur & Joie is designed to deliver beautifully styled children's parties as well as refined adult celebrations and milestone events.",
     },
   ];
 
@@ -109,14 +103,12 @@ function App() {
     <div className="site">
       <header className="hero">
         <div className="container">
-          <nav className="topbar">
-            <div>
-              <div className="brand">Fleur &amp; Joie</div>
-              <div className="tagline">
-                Curated celebrations, beautifully styled
-              </div>
-            </div>
+          <div className="logo-wrap">
+            <div className="logo-main">Fleur &amp; Joie</div>
+            <div className="logo-sub">Curated celebrations, beautifully styled</div>
+          </div>
 
+          <nav className="topbar">
             <button
               className={`menu-toggle ${menuOpen ? "open" : ""}`}
               onClick={() => setMenuOpen(!menuOpen)}
@@ -131,9 +123,10 @@ function App() {
 
             <div className={`navlinks ${menuOpen ? "nav-open" : ""}`}>
               <a href="#about" onClick={closeMenu}>About</a>
-              <a href="#services" onClick={closeMenu}>Services</a>
+              <a href="#packages" onClick={closeMenu}>Packages</a>
               <a href="#pricing" onClick={closeMenu}>Pricing</a>
               <a href="#gallery" onClick={closeMenu}>Gallery</a>
+              <a href="#faq" onClick={closeMenu}>FAQs</a>
               <a href="#contact" onClick={closeMenu}>Contact</a>
             </div>
           </nav>
@@ -145,7 +138,7 @@ function App() {
                 Elegant event styling and hire for beautifully curated
                 celebrations.
               </h1>
-              <p className="intro">
+              <p className="intro refined-text">
                 From children's parties to milestone birthdays, Fleur &amp; Joie
                 creates refined, stress-free events with a premium finish across
                 Winsford, Cheshire, and surrounding areas.
@@ -155,38 +148,29 @@ function App() {
                 <a className="btn btn-dark" href="#contact">
                   Enquire Now
                 </a>
-                <a className="btn btn-light" href="#services">
-                  Explore Services
+                <a className="btn btn-light" href="#packages">
+                  Explore Packages
                 </a>
               </div>
 
-              <div className="hero-meta">
-                <span>Based in Winsford</span>
-                <span>Covering Cheshire</span>
-                <span>Children's &amp; Adult Events</span>
+              <div className="hero-single-box">
+                Children's &amp; Adult Events • Covering Cheshire &amp;
+                Surrounding Areas
               </div>
             </div>
 
             <div className="hero-visual">
               <div className="image-card large-card photo hero-photo">
                 <div className="image-overlay">
-                  <span>Luxury kids celebration concept</span>
+                  <span>Luxury celebration concept</span>
                 </div>
               </div>
 
-              <div className="mini-cards">
+              <div className="mini-cards one-card">
                 <div className="photo small-photo softplay-photo">
                   <div className="image-overlay small-overlay">
-                    <span>Soft play concept</span>
+                    <span>Play styling concept</span>
                   </div>
-                </div>
-
-                <div className="info-card">
-                  <h3>Designed to Grow</h3>
-                  <p>
-                    A premium brand for children's celebrations, milestone
-                    birthdays, and private events.
-                  </p>
                 </div>
               </div>
             </div>
@@ -213,16 +197,20 @@ function App() {
         </div>
       </section>
 
-      <section id="services" className="section alt">
+      <section id="packages" className="section alt">
         <div className="container">
-          <p className="eyebrow">Services</p>
-          <h2>Planning, styling, and hire for beautifully curated occasions.</h2>
+          <p className="eyebrow">Pre-Made Packages</p>
+          <h2>Thoughtfully curated packages for stylish, stress-free celebrations.</h2>
 
-          <div className="grid three">
+          <div className="grid two package-grid">
             {packages.map((pkg) => (
               <div className="card service-card" key={pkg.name}>
                 <h3>{pkg.name}</h3>
+                <p className="package-price">{pkg.price}</p>
                 <p>{pkg.description}</p>
+                <p className="package-note">
+                  Add planning and event-day setup from £250 for a more stress-free experience.
+                </p>
               </div>
             ))}
           </div>
@@ -248,7 +236,7 @@ function App() {
       <section id="pricing" className="section alt">
         <div className="container pricing-layout">
           <div>
-            <p className="eyebrow">Event Planning</p>
+            <p className="eyebrow">Planning Services</p>
             <h2>Planning packages</h2>
 
             <div className="stack">
@@ -266,7 +254,7 @@ function App() {
           </div>
 
           <div>
-            <p className="eyebrow">Hire Collection</p>
+            <p className="eyebrow">Individual Hire Options</p>
             <h2>Hire pricing</h2>
 
             <div className="stack">
@@ -303,16 +291,24 @@ function App() {
 
           <div className="gallery-grid">
             <div className="gallery large-gallery g1">
-              <div className="image-overlay"><span>Signature party concept</span></div>
+              <div className="image-overlay">
+                <span>Signature party concept</span>
+              </div>
             </div>
             <div className="gallery g2">
-              <div className="image-overlay"><span>Soft play styling</span></div>
+              <div className="image-overlay">
+                <span>Soft play styling</span>
+              </div>
             </div>
             <div className="gallery g3">
-              <div className="image-overlay"><span>Garden games concept</span></div>
+              <div className="image-overlay">
+                <span>Garden party styling</span>
+              </div>
             </div>
             <div className="gallery g4">
-              <div className="image-overlay"><span>Adult tablescape styling</span></div>
+              <div className="image-overlay">
+                <span>Adult tablescape concept</span>
+              </div>
             </div>
           </div>
         </div>
@@ -330,7 +326,7 @@ function App() {
         </div>
       </section>
 
-      <section className="section">
+      <section id="faq" className="section">
         <div className="container">
           <p className="eyebrow">Frequently Asked Questions</p>
           <h2>Everything you need to know before enquiring.</h2>
@@ -367,12 +363,14 @@ function App() {
               <input type="text" name="location" placeholder="Event location" />
               <input type="text" name="package" placeholder="Service or hire item" />
             </div>
+
             <textarea
               name="message"
               placeholder="Tell us about your celebration"
               rows="6"
               required
             />
+
             <div className="contact-actions centered-actions">
               <button className="btn btn-dark" type="submit">
                 Send Enquiry
@@ -384,7 +382,8 @@ function App() {
           </form>
 
           <p className="form-note">
-            Replace <strong>your-form-id</strong> with your real Formspree form ID when you're ready.
+            Replace <strong>your-form-id</strong> with your real Formspree form
+            ID when you're ready.
           </p>
         </div>
       </section>
@@ -401,7 +400,7 @@ function App() {
 
           <div className="footer-links">
             <a href="#about">About</a>
-            <a href="#services">Services</a>
+            <a href="#packages">Packages</a>
             <a href="#pricing">Pricing</a>
             <a href="#contact">Contact</a>
           </div>
