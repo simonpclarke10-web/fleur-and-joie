@@ -82,6 +82,24 @@ function App() {
     },
   ];
 
+  const faqs = [
+    {
+      question: "How do I book?",
+      answer:
+        "Get in touch by email or Instagram with your date, location, and what you're looking for, and we'll confirm availability and pricing.",
+    },
+    {
+      question: "Do you cover all of Cheshire?",
+      answer:
+        "Yes, we are based in Winsford and cover Cheshire. Travel outside our usual area may also be available on request.",
+    },
+    {
+      question: "Can you help with both adult and children's events?",
+      answer:
+        "Absolutely. Fleur & Joie is designed to offer stylish experiences for children's celebrations, milestone birthdays, and private events.",
+    },
+  ];
+
   return (
     <div className="site">
       <header className="hero">
@@ -133,17 +151,17 @@ function App() {
             </div>
 
             <div className="hero-visual">
-              <div className="image-card large-card">
-                <div className="image-placeholder">Your best hero photo here</div>
+              <div className="image-card large-card photo hero-photo">
+                <div className="image-overlay">
+                  <span>Luxury kids celebration concept</span>
+                </div>
               </div>
 
               <div className="mini-cards">
-                <div className="info-card">
-                  <h3>Thoughtful Details</h3>
-                  <p>
-                    Beautifully styled setups that feel calm, elevated, and
-                    special.
-                  </p>
+                <div className="photo small-photo softplay-photo">
+                  <div className="image-overlay small-overlay">
+                    <span>Soft play concept</span>
+                  </div>
                 </div>
 
                 <div className="info-card">
@@ -262,16 +280,23 @@ function App() {
           <p className="eyebrow">Gallery</p>
           <h2>A glimpse into the Fleur &amp; Joie aesthetic.</h2>
           <p className="section-intro">
-            Replace these placeholders with your best setup photos as soon as
-            you have them. Real imagery will make the biggest difference to how
-            premium the site feels.
+            These are temporary editorial-style concept images to help the brand
+            feel polished while you prepare for launch.
           </p>
 
           <div className="gallery-grid">
-            <div className="gallery large-gallery">Hero setup photo</div>
-            <div className="gallery">Soft play setup</div>
-            <div className="gallery">Castle or garden games</div>
-            <div className="gallery">Styled detail photo</div>
+            <div className="gallery large-gallery g1">
+              <div className="image-overlay"><span>Signature party concept</span></div>
+            </div>
+            <div className="gallery g2">
+              <div className="image-overlay"><span>Soft play styling</span></div>
+            </div>
+            <div className="gallery g3">
+              <div className="image-overlay"><span>Garden games concept</span></div>
+            </div>
+            <div className="gallery g4">
+              <div className="image-overlay"><span>Adult tablescape styling</span></div>
+            </div>
           </div>
         </div>
       </section>
@@ -288,7 +313,22 @@ function App() {
         </div>
       </section>
 
-      <section id="contact" className="section">
+      <section className="section">
+        <div className="container">
+          <p className="eyebrow">Frequently Asked Questions</p>
+          <h2>Everything you need to know before enquiring.</h2>
+          <div className="faq-list">
+            {faqs.map((faq) => (
+              <div className="faq-item" key={faq.question}>
+                <h3>{faq.question}</h3>
+                <p>{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="section alt">
         <div className="container contact-box">
           <p className="eyebrow">Contact</p>
           <h2>Planning a celebration?</h2>
@@ -297,19 +337,38 @@ function App() {
             we'll be in touch with availability and pricing.
           </p>
 
-          <div className="contact-actions">
-            <a className="btn btn-dark" href="mailto:fleurandjoie@gmail.com">
-              fleurandjoie@gmail.com
-            </a>
-            <a
-              className="btn btn-light"
-              href="https://instagram.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Instagram
-            </a>
-          </div>
+          <form
+            className="enquiry-form"
+            action="https://formspree.io/f/mzdklvla"
+            method="POST"
+          >
+            <div className="form-grid">
+              <input type="text" name="name" placeholder="Your name" required />
+              <input type="email" name="email" placeholder="Your email" required />
+              <input type="text" name="eventType" placeholder="Event type" />
+              <input type="text" name="eventDate" placeholder="Event date" />
+              <input type="text" name="location" placeholder="Event location" />
+              <input type="text" name="package" placeholder="Service or hire item" />
+            </div>
+            <textarea
+              name="message"
+              placeholder="Tell us about your celebration"
+              rows="6"
+              required
+            />
+            <div className="contact-actions centered-actions">
+              <button className="btn btn-dark" type="submit">
+                Send Enquiry
+              </button>
+              <a className="btn btn-light" href="mailto:fleurandjoie@gmail.com">
+                fleurandjoie@gmail.com
+              </a>
+            </div>
+          </form>
+
+          <p className="form-note">
+            Replace <strong>your-form-id</strong> with your real Formspree form ID when you're ready.
+          </p>
         </div>
       </section>
 

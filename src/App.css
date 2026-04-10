@@ -18,6 +18,12 @@ a {
   text-decoration: none;
 }
 
+button,
+input,
+textarea {
+  font: inherit;
+}
+
 .site {
   width: 100%;
 }
@@ -138,6 +144,7 @@ p {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   transition: 0.2s ease;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -147,6 +154,7 @@ p {
 .btn-dark {
   background: #2f2a26;
   color: #ffffff;
+  border: 1px solid #2f2a26;
 }
 
 .btn-light {
@@ -181,7 +189,8 @@ p {
 .info-card,
 .card,
 .contact-box,
-.location-box {
+.location-box,
+.faq-item {
   background: #ffffff;
   border-radius: 28px;
   box-shadow: 0 10px 30px rgba(44, 34, 28, 0.06);
@@ -191,17 +200,45 @@ p {
   padding: 18px;
 }
 
-.image-placeholder {
+.photo,
+.gallery {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-photo {
   min-height: 360px;
   border-radius: 22px;
-  background: linear-gradient(135deg, #d9cec2, #eee5dc);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
+  background:
+    linear-gradient(rgba(31, 24, 20, 0.14), rgba(31, 24, 20, 0.14)),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.55), transparent 30%),
+    linear-gradient(135deg, #d8c6b4 0%, #f3e6da 45%, #d2b7a1 100%);
+}
+
+.softplay-photo {
+  min-height: 190px;
+  border-radius: 28px;
+  background:
+    linear-gradient(rgba(31, 24, 20, 0.1), rgba(31, 24, 20, 0.1)),
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.45), transparent 35%),
+    linear-gradient(135deg, #e8ddd2 0%, #f7efe8 48%, #cab8a7 100%);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: auto 18px 18px 18px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 18px;
+  padding: 12px 14px;
   font-family: Arial, Helvetica, sans-serif;
-  color: #6c625a;
+  font-size: 14px;
+  color: #5f5650;
+}
+
+.small-overlay {
+  inset: auto 14px 14px 14px;
 }
 
 .mini-cards {
@@ -329,14 +366,34 @@ p {
 .gallery {
   min-height: 230px;
   border-radius: 24px;
-  background: linear-gradient(135deg, #ddd2c6, #efe8df);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #6d645d;
+}
+
+.g1 {
+  background:
+    linear-gradient(rgba(31, 24, 20, 0.12), rgba(31, 24, 20, 0.12)),
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.4), transparent 30%),
+    linear-gradient(135deg, #d7c2b0 0%, #f4ebe2 50%, #bea28e 100%);
+}
+
+.g2 {
+  background:
+    linear-gradient(rgba(31, 24, 20, 0.1), rgba(31, 24, 20, 0.1)),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.38), transparent 30%),
+    linear-gradient(135deg, #e9ddd4 0%, #f8f2ec 50%, #ceb6a2 100%);
+}
+
+.g3 {
+  background:
+    linear-gradient(rgba(31, 24, 20, 0.1), rgba(31, 24, 20, 0.1)),
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.34), transparent 32%),
+    linear-gradient(135deg, #d4c0aa 0%, #eee2d6 52%, #b99877 100%);
+}
+
+.g4 {
+  background:
+    linear-gradient(rgba(31, 24, 20, 0.12), rgba(31, 24, 20, 0.12)),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.38), transparent 30%),
+    linear-gradient(135deg, #e6d7cb 0%, #f6eee6 48%, #c5a895 100%);
 }
 
 .large-gallery {
@@ -354,6 +411,54 @@ p {
 .center-text {
   max-width: 760px;
   margin: 0 auto;
+}
+
+.faq-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.faq-item {
+  padding: 26px 28px;
+}
+
+.enquiry-form {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.enquiry-form input,
+.enquiry-form textarea {
+  width: 100%;
+  border: 1px solid #ddd1c6;
+  background: #fffdfb;
+  border-radius: 18px;
+  padding: 16px 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #2f2a26;
+}
+
+.enquiry-form textarea {
+  margin-top: 14px;
+  resize: vertical;
+}
+
+.centered-actions {
+  justify-content: center;
+}
+
+.form-note {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #7d736b;
 }
 
 .footer {
@@ -394,7 +499,8 @@ p {
   .pricing-layout,
   .two-col,
   .grid.three,
-  .gallery-grid {
+  .gallery-grid,
+  .form-grid {
     grid-template-columns: 1fr;
   }
 
@@ -446,7 +552,8 @@ p {
   .location-box,
   .contact-box,
   .card,
-  .info-card {
+  .info-card,
+  .faq-item {
     padding: 24px;
   }
 }
