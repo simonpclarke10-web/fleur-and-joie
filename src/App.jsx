@@ -30,16 +30,16 @@ function App() {
       title: "Aesthetic Bouncy Castle",
       half: "£175",
       full: "£250",
-      note: "A statement piece for beautifully styled celebrations.",
+      note: "A statement hire piece for beautifully styled celebrations.",
     },
     {
-      title: "Soft Play & Wobble Cars",
+      title: "Soft Play Experience",
       half: "£65",
       full: "£100",
-      note: "Indoor play package designed for little guests.",
+      note: "An indoor play package designed for little guests.",
     },
     {
-      title: "Wooden Garden Games",
+      title: "Luxury Garden Games",
       half: "—",
       full: "£200",
       note: "Classic outdoor entertainment with a premium finish.",
@@ -64,6 +64,24 @@ function App() {
     },
   ];
 
+  const highlights = [
+    {
+      title: "Premium Styling",
+      description:
+        "Every setup is designed with a clean, elegant look that feels thoughtful, polished, and memorable.",
+    },
+    {
+      title: "Reliable & Stress-Free",
+      description:
+        "We aim to make celebrations feel easy with clear communication, dependable service, and careful setup.",
+    },
+    {
+      title: "For Every Occasion",
+      description:
+        "From children's parties to milestone birthdays and private celebrations, our brand is designed to grow with every event.",
+    },
+  ];
+
   return (
     <div className="site">
       <header className="hero">
@@ -80,21 +98,22 @@ function App() {
               <a href="#about">About</a>
               <a href="#services">Services</a>
               <a href="#pricing">Pricing</a>
+              <a href="#gallery">Gallery</a>
               <a href="#contact">Contact</a>
             </div>
           </nav>
 
           <div className="hero-content">
-            <div>
-              <p className="eyebrow">Premium Event Planning &amp; Hire</p>
+            <div className="hero-copy">
+              <p className="eyebrow">Premium Event Styling &amp; Hire</p>
               <h1>
-                Elegant events for children, adults, and every meaningful moment
-                in between.
+                Elegant event styling and hire for beautifully curated
+                celebrations.
               </h1>
               <p className="intro">
-                Fleur &amp; Joie creates refined celebrations through thoughtful
-                event planning and beautifully curated hire pieces, from intimate
-                children's parties to elevated milestone occasions.
+                From children's parties to milestone birthdays, Fleur &amp; Joie
+                creates refined, stress-free events with a premium finish across
+                Winsford, Cheshire, and surrounding areas.
               </p>
 
               <div className="buttons">
@@ -105,33 +124,54 @@ function App() {
                   Explore Services
                 </a>
               </div>
+
+              <div className="hero-meta">
+                <span>Based in Winsford</span>
+                <span>Covering Cheshire</span>
+                <span>Children's &amp; Adult Events</span>
+              </div>
             </div>
 
-            <div className="hero-card">
-              <div className="placeholder">Hero image placeholder</div>
-              <p className="placeholder-caption">
-                Replace this with your best event photo
-              </p>
+            <div className="hero-visual">
+              <div className="image-card large-card">
+                <div className="image-placeholder">Your best hero photo here</div>
+              </div>
+
+              <div className="mini-cards">
+                <div className="info-card">
+                  <h3>Thoughtful Details</h3>
+                  <p>
+                    Beautifully styled setups that feel calm, elevated, and
+                    special.
+                  </p>
+                </div>
+
+                <div className="info-card">
+                  <h3>Designed to Grow</h3>
+                  <p>
+                    A premium brand for children's celebrations, milestone
+                    birthdays, and private events.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </header>
 
       <section id="about" className="section">
-        <div className="container two-col">
+        <div className="container two-col about-grid">
           <div>
             <p className="eyebrow">About</p>
-            <h2>
-              A brand inspired by beauty, joy, and meaningful celebration.
-            </h2>
+            <h2>A brand inspired by beauty, joy, and meaningful celebration.</h2>
           </div>
 
           <div>
             <p>
               Fleur &amp; Joie is a premium event planning and hire business
               created to bring elegance and ease to special occasions. Inspired
-              by your daughters, the brand carries a personal story while
-              remaining timeless, versatile, and suited to both children's
+              by family and rooted in thoughtful detail, the brand is designed
+              to feel timeless, versatile, and suited to both children's
               celebrations and sophisticated milestone events.
             </p>
           </div>
@@ -145,7 +185,7 @@ function App() {
 
           <div className="grid three">
             {packages.map((pkg) => (
-              <div className="card" key={pkg.name}>
+              <div className="card service-card" key={pkg.name}>
                 <h3>{pkg.name}</h3>
                 <p>{pkg.description}</p>
               </div>
@@ -154,8 +194,24 @@ function App() {
         </div>
       </section>
 
-      <section id="pricing" className="section">
-        <div className="container grid two">
+      <section className="section">
+        <div className="container">
+          <p className="eyebrow">Why Choose Us</p>
+          <h2>Thoughtful details. Reliable service. Beautiful results.</h2>
+
+          <div className="grid three">
+            {highlights.map((item) => (
+              <div className="card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" className="section alt">
+        <div className="container pricing-layout">
           <div>
             <p className="eyebrow">Event Planning</p>
             <h2>Planning packages</h2>
@@ -201,16 +257,34 @@ function App() {
         </div>
       </section>
 
-      <section className="section alt">
+      <section id="gallery" className="section">
         <div className="container">
           <p className="eyebrow">Gallery</p>
           <h2>A glimpse into the Fleur &amp; Joie aesthetic.</h2>
+          <p className="section-intro">
+            Replace these placeholders with your best setup photos as soon as
+            you have them. Real imagery will make the biggest difference to how
+            premium the site feels.
+          </p>
 
-          <div className="grid three">
-            <div className="gallery">Photo placeholder</div>
-            <div className="gallery">Photo placeholder</div>
-            <div className="gallery">Photo placeholder</div>
+          <div className="gallery-grid">
+            <div className="gallery large-gallery">Hero setup photo</div>
+            <div className="gallery">Soft play setup</div>
+            <div className="gallery">Castle or garden games</div>
+            <div className="gallery">Styled detail photo</div>
           </div>
+        </div>
+      </section>
+
+      <section className="section alt">
+        <div className="container location-box">
+          <p className="eyebrow">Areas We Cover</p>
+          <h2>Based in Winsford, covering Cheshire and surrounding areas.</h2>
+          <p className="center-text">
+            Fleur &amp; Joie is based in Winsford and covers Cheshire for event
+            styling, planning, and hire. Travel outside this area may be
+            available on request.
+          </p>
         </div>
       </section>
 
@@ -219,13 +293,13 @@ function App() {
           <p className="eyebrow">Contact</p>
           <h2>Planning a celebration?</h2>
           <p className="intro center">
-            Whether you're planning a children's party, a milestone birthday, or
-            a bespoke private event, we'd love to hear more.
+            Tell us your event date, location, and what you're looking for, and
+            we'll be in touch with availability and pricing.
           </p>
 
-          <div className="buttons center-buttons">
-            <a className="btn btn-dark" href="mailto:simonpclarke10@gmail.com">
-              simonpclarke10@gmail.com
+          <div className="contact-actions">
+            <a className="btn btn-dark" href="mailto:fleurandjoie@gmail.com">
+              fleurandjoie@gmail.com
             </a>
             <a
               className="btn btn-light"
@@ -238,6 +312,25 @@ function App() {
           </div>
         </div>
       </section>
+
+      <footer className="footer">
+        <div className="container footer-inner">
+          <div>
+            <div className="brand footer-brand">Fleur &amp; Joie</div>
+            <p className="footer-text">
+              Premium event styling, planning, and hire in Winsford and across
+              Cheshire.
+            </p>
+          </div>
+
+          <div className="footer-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
